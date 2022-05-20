@@ -1,0 +1,65 @@
+body {
+  font-family: "Cambria Math";
+}
+
+#menudrop {
+  text-align: center;
+  background-color: black;
+  font-size: 18px;
+}
+.dropdown-item {
+  color: white !important;
+}
+
+.dropdown-menu a:active{
+  background-color: #F5F5F4 !important;
+}
+
+#mainMenu {
+  background-color: #F5F5F4;
+}
+ #menumobile {
+  color: white;
+  text-align: center;
+  font-size: 150%;
+}
+#menumobile ul {
+   list-style: none;
+ }
+#menumobile a{
+  text-decoration: none;
+  color: white;
+}
+
+#menumobile .nav-item a:hover {
+  color: red;
+  background-color: #F5F5F4;
+}
+
+.linkMenuButtons {
+  color: white;
+}
+
+.logo {
+  margin-left: 5%;
+  font-size: 30px;
+}
+.menuButtons{
+  font-size: 18px;
+  background-color: black;
+  font-weight: bold;
+  margin: 5px 15px 5px 15px;
+  padding: 0 !important;
+  justify-content: center;
+}
+#areaClient {
+  width: 150px;
+}
+
+.navbar-nav, a:hover, a:active, a:focus {
+  color: black !important;
+  background-color: #F5F5F4;
+}
+
+
+
