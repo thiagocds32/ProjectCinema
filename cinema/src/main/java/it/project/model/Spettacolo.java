@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -27,9 +28,11 @@ public class Spettacolo implements Serializable{
 	@Column(name = "ora_inizio", nullable = false)
 	private String orario;
 	
-	@OneToOne(mappedBy = "sala", cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.MERGE)
+	@JoinColumn(name = "id_sala")
 	private Sala sala;
-	@OneToOne(mappedBy = "film", cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.MERGE)
+	@JoinColumn(name = "id_film")
 	private Film film;
 	
 	

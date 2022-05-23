@@ -47,4 +47,9 @@ public class UtenteDaoImpl implements UtenteDao{
 		return ((UtenteDaoImpl) manager).checkUten(u);
 	}
 
+	@Override
+	public boolean login(Utente u) {
+		return ((UtenteDaoImpl) manager).login(u);
+	}
+
 }

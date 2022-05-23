@@ -1,14 +1,17 @@
 package it.project.model;
 
 import java.io.Serializable;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 @Entity
-@Table(name = "sale")
+@Table(name = "film")
 public class Film implements Serializable{
 	
 	
@@ -26,6 +29,17 @@ public class Film implements Serializable{
 	private String genere;
 	@Column(name = "anno", nullable = false)
 	private int anno;
+	@Column(name = "durata", nullable = false)
+	private int durata;
+	@OneToOne(mappedBy = "film", cascade = CascadeType.ALL)
+	private Spettacolo spettacolo;
+	
+	public int getDurata() {
+		return durata;
+	}
+	public void setDurata(int durata) {
+		this.durata = durata;
+	}
 	public int getId() {
 		return id;
 	}

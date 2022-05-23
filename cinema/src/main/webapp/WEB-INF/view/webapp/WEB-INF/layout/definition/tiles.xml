@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+  <definition name="baseLayout" template="/WEB-INF/layout/template/base.jsp">
+    <put-attribute name="title" value="" />
+    <put-attribute name="header" value="/WEB-INF/layout/template/header.jsp" />
+    <put-attribute name="content" value="" />
+    <put-attribute name="footer" value="/WEB-INF/layout/template/footer.jsp" />
+  </definition>
+  
+  <definition name="index" extends="baseLayout">
+    <put-attribute name="title" value="Home" />
+    <put-attribute name="content" value="/WEB-INF/view/index.jsp" />
+  </definition>
+  
+  <definition name="books" extends="baseLayout">
+    <put-attribute name="title" value="Books" />
+    <put-attribute name="content" value="/WEB-INF/view/books.jsp" />
+  </definition>
+  
+  <definition name="book-form" extends="baseLayout">
+    <put-attribute name="title" value="New Book" />
+    <put-attribute name="content" value="/WEB-INF/view/book-form.jsp" />
+  </definition>
+  
+  <definition name="book-card" extends="baseLayout">
+    <put-attribute name="title" value="Book Card" />
+    <put-attribute name="content" value="/WEB-INF/view/book-card.jsp" />
+  </definition>
+  
+  <definition name="customer-form" extends="baseLayout">
+    <put-attribute name="title" value="Customer" />
+    <put-attribute name="content" value="/WEB-INF/view/customer-form.jsp" />
+  </definition>
+  
+  <definition name="customers" extends="baseLayout">
+    <put-attribute name="title" value="Customer" />
+    <put-attribute name="content" value="/WEB-INF/view/customers.jsp" />
+  </definition>
+  
+  <definition name="categories" extends="baseLayout">
+    <put-attribute name="title" value="Categories" />
+    <put-attribute name="content" value="/WEB-INF/view/categories.jsp" />
+  </definition>
+  
+  <definition name="category" extends="baseLayout">
+    <put-attribute name="title" value="Category" />
+    <put-attribute name="content" value="/WEB-INF/view/category.jsp" />
+  </definition>
+  
+  <definition name="orders" extends="baseLayout">
+    <put-attribute name="title" value="Orders" />
+    <put-attribute name="content" value="/WEB-INF/view/orders.jsp" />
+  </definition>
+  
+  <definition name="order-form" extends="baseLayout">
+    <put-attribute name="title" value="Order" />
+    <put-attribute name="content" value="/WEB-INF/view/order-form.jsp" />
+  </definition>
+  
+</tiles-definitions>

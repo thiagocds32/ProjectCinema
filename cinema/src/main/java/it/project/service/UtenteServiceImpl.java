@@ -48,4 +48,14 @@ public class UtenteServiceImpl implements UtenteService {
 		}
 	}
 
+	@Override
+	public boolean login(Utente u) {
+		List<Utente> list = readAll();
+		if (list.stream().filter(ut -> ut.getUsername().equals(u.getUsername())).filter(up -> 
+		up.getPassword().equals(u.getPassword())).toArray().length > 0) {
+			return true;
+		}
+		return false;
+	}
+
 }

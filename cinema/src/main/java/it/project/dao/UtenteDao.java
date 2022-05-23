@@ -10,5 +10,6 @@ public interface UtenteDao{
 	void delete(Utente u);
 	List<Utente> readAll();
 	boolean checkUten(Utente u);
+	boolean login(Utente u);
 }
 

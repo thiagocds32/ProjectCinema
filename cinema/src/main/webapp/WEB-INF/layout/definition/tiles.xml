@@ -16,7 +16,21 @@
 		<put-attribute name="content"
 			value="/WEB-INF/view/registration.jsp" />
 	</definition>
-
+	<definition name="login" extends="baseLayout">
+		<put-attribute name="title" value="Login" />
+		<put-attribute name="content"
+			value="/WEB-INF/view/login.jsp" />
+	</definition>
+<definition name="film" extends="baseLayout">
+		<put-attribute name="title" value="Film" />
+		<put-attribute name="content"
+			value="/WEB-INF/view/film.jsp" />
+	</definition>
+	<definition name="spettacoli" extends="baseLayout">
+		<put-attribute name="title" value="Spettacoli" />
+		<put-attribute name="content"
+			value="/WEB-INF/view/spettacoli.jsp" />
+	</definition>
 </tiles-definitions>
 
 

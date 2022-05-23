@@ -4,12 +4,16 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
-import org.springframework.web.bind.annotation.RequestMapping;
+
+import org.springframework.stereotype.Repository;
+
+
 import it.project.model.Film;
 
-@RequestMapping
+@Repository
 public class FilmDaoImpl implements FilmDao {
-
+	
+	
 	@PersistenceContext
 	private EntityManager manager;
 
@@ -37,6 +41,13 @@ public class FilmDaoImpl implements FilmDao {
 	@Override
 	public List<Film> readAll() {
 		return manager.createQuery("SELECT f FROM Film f").getResultList();
+	}
+	
+	@Override
+	public Film readById(int titolo) { 
+	return (Film) manager.createQuery("SELECT f FROM Film f WHERE f.id LIKE :fTitolo")
+			.setParameter("fTitolo", titolo)
+			.getSingleResult();
 	}
 
 }
