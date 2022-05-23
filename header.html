@@ -3,65 +3,182 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device_width" />
+
+
+  <!-- --------------------------------- ESSENTIAL IMPORTS ------------------------------------------>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="headerStyle.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+  <!-- --------------------------------- ESSENTIAL IMPORTS ------------------------------------------>
+
+
+
+  <!-- --------------------------------- CSS FOR NAVBAR ------------------------------------------>
+  <script src="https://kit.fontawesome.com/afd6aa68df.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="fontawesome-free-5.15.1/css/all.css">
+  <link rel="stylesheet" href="../css/headerStyle/headerStyle.css">
+  <link rel="stylesheet" href="../css/headerStyle/headerMenuHamburguerStyle.css">
+  <link rel="stylesheet" href="../css/headerStyle/headerSearchBarStyle.css">
+  <link rel="stylesheet" href="../css/headerStyle/headerPopUpLoginStyle.css">
+  <!-- --------------------------------- CSS FOR NAVBAR ------------------------------------------>
 
 
 </head>
 <body>
 
-<div class="collapse" id="navbarToggleExternalContent">
-  <div class="bg-dark p-4 " id="menumobile">
-    <ul>
-      <li><a href="#">Login</a> </li>
-      <li><a href="#">Registrati</a></li>
-      <li></li>
-    </ul>
+
+<header>
+
+  <!-- --------------------POP UP LOGIN------------------------ --->
+
+  <div class="pop-up-container"> </div>
+  <div class="pop-up-login">
+
+    <div class="closeButtonPopUp"></div>
+    <div class="accediContainer">
+      <p id="accedi">Accedi</p>
+    </div>
+
+    <div class="formLogin">
+      <form action="">
+
+        <input type="text" name="username" class="formLoginContent" id="formLogin" placeholder="Username">>
+
+        <input type="text" name="password" class="formLoginContent" id="formPassword" placeholder="Password">
+      </form>
+    </div>
+    <div class="loginRequestButtonContainer">
+      <button name="loginRequest" id="loginRequestButton">Login</button>
+    </div>
+
   </div>
-</div>
-<nav class="navbar navbar-expand-md " id="mainMenu">
-  <div class="container-fluid">
 
-      <a class="navbar-brand logo" href="#">Cinema</a>
+  <!-- --------------------POP UP LOGIN------------------------ --->
 
-      <ul class="navbar-nav">
 
-        <li class="nav-item">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        </li>
 
-        <li class="nav-item collapse navbar-collapse menuButtons" id="areaClient">
-          <a class="nav-link linkMenuButtons" href="#" role="button" aria-expanded="false">
+  <!--- Div nascosto per menu mobile--->
+
+
+  <div class="collapse" id="navbarToggleExternalContent">
+    <div class="p-4" id="menumobileNascosto">
+      <ul>
+        <li>
+          <a class="nav-link menumobileNascosto" href="#" role="button" aria-expanded="false">
             Area Riservata
           </a>
         </li>
-        <li class="nav-item dropdown collapse navbar-collapse menuButtons">
-          <a class="nav-link linkMenuButtons" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <li>
+          <a class="nav-link menumobileNascosto" href="#" role="button" aria-expanded="false">
             Login
           </a>
-          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDarkDropdownMenuLink" id="menudrop">
-            <li><a class="dropdown-item" href="#">Login</a></li>
-            <li><a class="dropdown-item" href="#">Registrati</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
         </li>
 
 
       </ul>
+    </div>
+  </div>
+
+  <!--- Div nascosto per menu mobile--->
 
 
 
+
+
+  <nav class="navbar navbar-expand-md navbar-1 " id="mainMenu">
+
+    <div class="container-fluid">
+
+
+      <!--- Logo brand del sito--->
+      <a class="navbar-brand logoCinema" href="#">Cinema</a>
+      <!--- Logo brand del sito--->
+
+
+
+
+      <!--- --------------------- SEARCH BAR ------------------------------- --->
+
+      <ul class="navbar-nav">
+        <li>
+          <div class="box">
+            <form name="search">
+              <input type="text" class="barSearch" name="txt">
+            </form>
+            <i class="fas fa-search" id="icon-magnifier"></i>
+          </div>
+        </li>
+        <!--- --------------------- SEARCH BAR ------------------------------- --->
+
+
+
+
+        <!--- Menu Hamburguer Nascosto. Appare soltanto quando collapsano altre cose--->
+        <li class="nav-item">
+          <div class="menu-btn toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent"
+               aria-controls="navbarToggleExternalContent"
+               aria-expanded="false"
+               aria-label="Toggle navigation">
+            <div class="menu-btn_burger"></div>
+          </div>
+        </li>
+
+        <!--- Menu Hamburguer Nascosto. Appare soltanto quando colapsano altre cose--->
+
+
+
+
+
+        <!--- Tasto Area Riservata che collapsa quando lo schermo diventa piu piccolo di md--->
+        <li class="nav-item collapse navbar-collapse menuButtons" id="areaClient">
+          <button class="nav-link linkMenuButtons" aria-expanded="false" name="Area Riservata">
+            Area Riservata
+          </button>
+        </li>
+        <!--- Tasto Area Riservata che collapsa quando lo schermo diventa piu piccolo di md--->
+
+
+
+
+        <!--- Tasto Login che collapsa quando lo schermo diventa piu piccolo di md--->
+        <li class="nav-item dropdown collapse navbar-collapse menuButtons">
+          <button class="nav-link linkMenuButtons" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Login
+          </button>
+          <!--- Tasto Login che collapsa quando lo schermo diventa piu piccolo di md--->
+
+
+
+
+          <!--- Menu Dropdown Compreso dentro il tasto login--->
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDarkDropdownMenuLink" id="menudrop">
+            <li><button class="dropdown-item"  name="loginDropdown" id="loginButtonDropdown">Login</button></li>
+            <li><button class="dropdown-item" name="registrati">Registrati</button></li>
+          </ul>
+        </li>
+      </ul>
+
+    </div>
+
+
+  </nav>
 
   </div>
 
 
-</nav>
+</header>
 
-</div>
+
+
+
+
+<script src="../javascript/hamburguer.js"></script>
+<script src="../javascript/loginPopUpJS.js"></script>
 
 </body>
+
+
 </html>
