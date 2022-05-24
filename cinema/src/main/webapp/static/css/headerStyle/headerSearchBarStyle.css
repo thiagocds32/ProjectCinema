@@ -1,0 +1,63 @@
+/* --------------------- SEARCH BAR --------------------------*/
+
+.box{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
+
+}
+.barSearch {
+  letter-spacing: 3px;
+  text-align: center;
+  padding: 6px;
+  width: 47px;
+  height: 49px;
+  background: none;
+  border: 3px solid #42fbf2;
+  border-radius: 50px;
+  box-sizing: border-box;
+  font-size: 20px;
+  color: white;
+  outline: none;
+  transition: .5s;
+
+}
+
+@media (max-width: 930px) {
+
+  .box:hover .barSearch {
+    width: 100px;
+  }
+}
+
+@media (max-width: 767.99px) {
+  .barSearch{
+    display: none;
+  }
+  .box {
+    display:none;
+  }
+}
+.box:hover input{
+  width: 250px;
+  background: #25252A;
+  border-radius: 10px;
+}
+.box i{
+  display: flex;
+  position: absolute;
+  top: 35%;
+  right: 8px;
+  transform: translate(-50%);
+  font-size: 15px;
+  color: #42fbf2;
+  transition: .2s;
+}
+.box:hover i{
+  opacity: 0;
+  z-index: -1;
+}
+
+/* --------------------- SEARCH BAR --------------------------*/

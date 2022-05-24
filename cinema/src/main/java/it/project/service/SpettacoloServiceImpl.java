@@ -1,11 +1,7 @@
 package it.project.service;
-
 import java.util.List;
-import java.util.stream.Collectors;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import it.project.dao.FilmDao;
 import it.project.dao.SpettacoloDao;
 import it.project.model.Film;
 import it.project.model.Spettacolo;
@@ -40,8 +36,27 @@ public class SpettacoloServiceImpl implements SpettacoloService {
 	}
 
 	@Override
+	public List<Film> getProgrammazione() {
+		return dao.getProgrammazione();
+	}
+
+	@Override
 	public List<Film> getFilmsBy(String searchBy) {
 		return dao.getFilmsBy(searchBy);
 	}
+
+	@Override
+	public boolean checkSpettacolo(Spettacolo s) {
+		List<Spettacolo> list = readAll();
+		
+		if (list.stream().filter(sp ->sp.getSala().equals(s.getSala()))
+				.filter(spe -> spe.getData().equals(s.getData()))
+				.filter(spet -> spet.getOrario().equals(s.getOrario()))
+				.toArray().length> 0) {
+			return true;
+		}	
+		return false;
+	}
+
 
 }

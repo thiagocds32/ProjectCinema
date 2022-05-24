@@ -1,14 +1,17 @@
 package it.project.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -24,8 +27,12 @@ public class Sala implements Serializable{
 	@Column(name = "descrizione", length = 255, nullable = false)
 	private String descrizione;
 	
-	@OneToOne(mappedBy = "sala", cascade = CascadeType.ALL)
-	private Spettacolo spettacolo;
+	@OneToMany(mappedBy = "sala", 
+			cascade = CascadeType.ALL,
+			fetch = FetchType.EAGER,
+			orphanRemoval = true)
+
+	private List<Spettacolo> spettacoli= new ArrayList<>();
 
 	public int getId() {
 		return id;

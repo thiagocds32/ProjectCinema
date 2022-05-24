@@ -32,7 +32,6 @@ public class FilmController {
 			@RequestParam("genere") String genere,
 			@RequestParam("anno") int anno,
 			@RequestParam("durata") int durata) {
-		String redirect;
 		Film film = new Film();
 		film.setTitolo(titolo);
 		film.setDescrizione(descrizione);
@@ -41,7 +40,7 @@ public class FilmController {
 		film.setAnno(anno);
 		film.setDurata(durata);
 		serv.create(film);
-		return redirect="redirect:/film";
+		return "redirect:/film";
 
 	}
 }

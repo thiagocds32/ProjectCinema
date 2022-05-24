@@ -23,7 +23,7 @@
 
 					<label for="film">Film:</label> <select id="film" name="film">
 						<c:forEach items="${filmList}" var="film">
-							<option  value="1">${film.id}. ${film.titolo}</option>
+							<option  value="${film.id}">${film.titolo}</option>
 						</c:forEach>
 					</select>
 					
@@ -32,7 +32,7 @@
 					<label for="authorSt">Sala:</label>
 					<select name="sala">
 						<c:forEach items="${saleList}" var="sala">
-							<option  value="1">${sala.id}. ${sala.descrizione}</option>
+							<option  value="${sala.id}">${sala.descrizione}</option>
 						</c:forEach>
 					</select>
 				</div>

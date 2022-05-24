@@ -7,8 +7,6 @@ import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
-
-import it.project.model.Film;
 import it.project.model.Sala;
 
 @Repository

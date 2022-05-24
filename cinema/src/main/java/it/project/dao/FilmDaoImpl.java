@@ -44,10 +44,10 @@ public class FilmDaoImpl implements FilmDao {
 	}
 	
 	@Override
-	public Film readById(int titolo) { 
-	return (Film) manager.createQuery("SELECT f FROM Film f WHERE f.id LIKE :fTitolo")
-			.setParameter("fTitolo", titolo)
-			.getSingleResult();
-	}
-
+    public Film readById(int titolo) { 
+    return (Film) manager.createQuery("SELECT f FROM Film f WHERE f.id LIKE :fTitolo")
+            .setParameter("fTitolo", titolo)
+            .getSingleResult();
+    }
+	
 }

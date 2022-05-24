@@ -10,5 +10,7 @@ public interface SpettacoloDao {
 	void update(Spettacolo s);
 	void delete(Spettacolo s);
 	List<Spettacolo> readAll();
+	List<Film> getProgrammazione();
 	List<Film> getFilmsBy(String searchBy);
+
 }
