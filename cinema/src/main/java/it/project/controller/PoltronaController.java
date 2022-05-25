@@ -1,29 +1,26 @@
 package it.project.controller;
-
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import it.project.service.FilaService;
-import it.project.service.PoltronaService;
-import it.project.service.PostoService;
+//import it.project.service.FilaService;
+//import it.project.service.PoltronaService;
+//import it.project.service.PostoService;
 
 @Controller
 @RequestMapping("")
 public class PoltronaController {
 
-	@Autowired
-	private PoltronaService pServ;
-
-	@Autowired
-	private FilaService fServ;
-
-	@Autowired
-	private PostoService ptServ;
-
-	
-	/************************NON TOCCAREEE**********************/
+//	@Autowired
+//	private PoltronaService pServ;
+//
+//	@Autowired
+//	private FilaService fServ;
+//
+//	@Autowired
+//	private PostoService ptServ;
+//
+//	
+//	/************************NON TOCCAREEE**********************/
 //	@GetMapping("/poltrone")  
 //	public String getPage() {
 //

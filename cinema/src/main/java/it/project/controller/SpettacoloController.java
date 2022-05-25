@@ -26,10 +26,12 @@ public class SpettacoloController {
 	private SalaService salaServ;
 
 	private boolean formError;
+	private boolean formSuccess;
 
 	@GetMapping
 	public String getPage(Model model) {
 		model.addAttribute("formError", formError);
+		model.addAttribute("formSuccess", formSuccess);
 		model.addAttribute("spettacoli", serv.readAll());
 		model.addAttribute("filmList", filmServ.readAll());
 		model.addAttribute("saleList", salaServ.readAll());
@@ -45,12 +47,19 @@ public class SpettacoloController {
 		spettacolo.setSala((salaServ.readById(sala)));
 		spettacolo.setData(data);
 		spettacolo.setOrario(orario);
+		String redirect;
 
-		if (serv.checkSpettacolo(spettacolo)) {
-			serv.create(spettacolo);
+		///////////////----------VEDI----------//////////////////
+		if (!serv.checkSpettacolo(spettacolo)) {			
+			formSuccess=true;		
+			System.out.println("--------------------------------------------------GIUSTO----------------------------------------------");
+			redirect="redirect:/spettacoli";
 		} else {
-			formError = true;
+			formError=true;
+			// serv.create(spettacolo);
+			System.out.println("----------------------.------------------------------SBAGLIATO--------------------------------------------------");		
+			redirect="redirect:/spettacoli";
 		}
-		return "redirect:/spettacoli";
+		return redirect;
 	}
 }

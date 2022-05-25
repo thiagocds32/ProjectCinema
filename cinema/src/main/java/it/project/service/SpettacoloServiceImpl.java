@@ -1,4 +1,6 @@
 package it.project.service;
+
+import java.util.Iterator;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,7 +13,6 @@ public class SpettacoloServiceImpl implements SpettacoloService {
 
 	@Autowired
 	private SpettacoloDao dao;
-	
 
 	@Override
 	public void create(Spettacolo s) {
@@ -47,16 +48,25 @@ public class SpettacoloServiceImpl implements SpettacoloService {
 
 	@Override
 	public boolean checkSpettacolo(Spettacolo s) {
+		boolean errore = false;
 		List<Spettacolo> list = readAll();
-		
-		if (list.stream().filter(sp ->sp.getSala().equals(s.getSala()))
-				.filter(spe -> spe.getData().equals(s.getData()))
-				.filter(spet -> spet.getOrario().equals(s.getOrario()))
-				.toArray().length> 0) {
-			return true;
-		}	
-		return false;
-	}
+//		if (list.stream().filter(sp ->sp.getSala().equals(sala))
+//				//.filter(spe -> spe.getData().equals(s.getData()))
+//				//.filter(spet -> spet.getOrario().equals(s.getOrario()))
+//				.toArray().length> 0) {
+//			return true;
+//		}	
+//		return false;
 
+		for (Spettacolo sp : list) {
+			if (sp.getSala().equals(s.getSala())) {
+				errore = true;
+				System.out.println("/////////////////////////////////////////" + s.getFilm().getTitolo()
+						+ "//////////////////////////7");
+				break;
+			}
+		}
+		return errore;
+	}
 
 }

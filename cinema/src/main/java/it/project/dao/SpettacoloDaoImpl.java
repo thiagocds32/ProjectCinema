@@ -54,7 +54,7 @@ public class SpettacoloDaoImpl implements SpettacoloDao {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Film> getProgrammazione() { 
-		return manager.createQuery("SELECT f FROM Spettacolo s INNER JOIN s.film f").getResultList();
+		return manager.createQuery("SELECT DISTINCT f FROM Spettacolo s INNER JOIN s.film f").getResultList();
 	}
 
 }

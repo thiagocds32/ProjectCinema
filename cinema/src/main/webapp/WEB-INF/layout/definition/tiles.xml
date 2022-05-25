@@ -29,8 +29,13 @@
 	<definition name="spettacoli" extends="baseLayout">
 		<put-attribute name="title" value="Spettacoli" />
 		<put-attribute name="content"
-			value="/WEB-INF/view/spettacoli.jsp" />
+			value="/WEB-INF/view/spettacoli.jsp" />		
 	</definition>
+	<definition name="programmazione" extends="baseLayout">
+        <put-attribute name="title" value="Programmazione" />
+        <put-attribute name="content"
+            value="/WEB-INF/view/programmazione.jsp" />
+    </definition>
 </tiles-definitions>
 
 

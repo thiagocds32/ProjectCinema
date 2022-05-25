@@ -6,8 +6,7 @@
 
 
 <!-- --------------------------------- CSS FOR NAVBAR ------------------------------------------>
-<script src="https://kit.fontawesome.com/afd6aa68df.js"
-	crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/afd6aa68df.js"></script>
 <link rel="stylesheet"
 	href='<c:url value="/static/css/headerStyle/headerStyle.css"/>'>
 <link rel="stylesheet"
@@ -147,15 +146,7 @@
 		</nav>
 
 	</header>
-
-
-
-
-
 	<script src="../javascript/hamburguer.js"></script>
 	<script src="../javascript/loginPopUpJS.js"></script>
-
 </body>
-
-
 </html>
