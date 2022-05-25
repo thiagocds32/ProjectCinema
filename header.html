@@ -17,12 +17,13 @@
 
 
   <!-- --------------------------------- CSS FOR NAVBAR ------------------------------------------>
-  <script src="https://kit.fontawesome.com/afd6aa68df.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/452d78dd7d.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="fontawesome-free-5.15.1/css/all.css">
   <link rel="stylesheet" href="../css/headerStyle/headerStyle.css">
   <link rel="stylesheet" href="../css/headerStyle/headerMenuHamburguerStyle.css">
   <link rel="stylesheet" href="../css/headerStyle/headerSearchBarStyle.css">
   <link rel="stylesheet" href="../css/headerStyle/headerPopUpLoginStyle.css">
+  <link rel="stylesheet" href="../css/headerStyle/headerPopUpRegistrationsStyle.css"> <!-- NUOVO LINK DA FARE -->
   <!-- --------------------------------- CSS FOR NAVBAR ------------------------------------------>
 
 
@@ -31,21 +32,68 @@
 
 
 <header>
+  <div class="pop-up-container-login"> </div>
+  <div class="pop-up-container-registrazione"> </div>
+  <!-- --------------------POP UP REGISTRAZIONE----------------------- --->
+
+  <div class="pop-up-registration">
+    <div class="closeButtonPopUpRegistrazione"></div>
+      <form>
+        <div class="registrationForm">
+          <input type="text" name="nome" id="nome" placeholder="Nome">
+        </div>
+        <div class="registrationForm">
+          <input type="text" id="cognome" placeholder="Cognome">
+        </div>
+
+        <div class="registrationForm">
+          <input type="email" id="mail" aria-describedby="emailHelp" placeholder="Indirizzo e-mail">
+        </div>
+
+        <div class="registrationForm">
+          <input type="date" class="form-control" id="data">
+        </div>
+
+        <div class="registrationForm">
+          <input type="text" id="username" placeholder="Username">
+        </div>
+
+        <div class="registrationForm">
+          <input type="password" id="pass" placeholder="Password">
+        </div>
+
+        <div class="registrationForm">
+          <p>
+            <input type="checkbox" id="exampleCheck1" name="checkTrattamento">
+            <label for="exampleCheck1">
+              Autorizzo il trattamento dei miei dati personali presenti nel curriculum vitae ai sensi del Decreto Legislativo 30 giugno 2003, n. 196 e del GDPR (Regolamento UE 2016/679).
+
+            </label>
+          </p>
+
+        </div>
+
+        <div class="registrationForm">
+          <button name="" id="registrationButton">Registrati</button>
+        </div>
+      </form>
+  </div>
+  <!-- --------------------POP UP REGISTRAZIONE----------------------- --->
+
 
   <!-- --------------------POP UP LOGIN------------------------ --->
 
-  <div class="pop-up-container"> </div>
   <div class="pop-up-login">
 
-    <div class="closeButtonPopUp"></div>
+    <div class="closeButtonPopUpLogin"></div>
     <div class="accediContainer">
-      <p id="accedi">Accedi</p>
+      <p id="accedi">Log In</p>
     </div>
 
     <div class="formLogin">
       <form action="">
 
-        <input type="text" name="username" class="formLoginContent" id="formLogin" placeholder="Username">>
+        <input type="text" name="username" class="formLoginContent" id="formLogin" placeholder="Username">
 
         <input type="text" name="password" class="formLoginContent" id="formPassword" placeholder="Password">
       </form>
@@ -65,20 +113,15 @@
 
   <div class="collapse" id="navbarToggleExternalContent">
     <div class="p-4" id="menumobileNascosto">
-      <ul>
-        <li>
-          <a class="nav-link menumobileNascosto" href="#" role="button" aria-expanded="false">
-            Area Riservata
-          </a>
-        </li>
-        <li>
-          <a class="nav-link menumobileNascosto" href="#" role="button" aria-expanded="false">
-            Login
-          </a>
-        </li>
+      <button class="nav-link menumobileNascosto" id="registrazioneMenuNascosto"  aria-expanded="false">
+        Area Riservata
+      </button>
+
+      <button class="nav-link menumobileNascosto" id="loginMenuNascosto"  aria-expanded="false">
+        Login
+      </button>>
 
 
-      </ul>
     </div>
   </div>
 
@@ -103,7 +146,7 @@
       <!--- --------------------- SEARCH BAR ------------------------------- --->
 
       <ul class="navbar-nav">
-        <li>
+        <li class="nav-item">
           <div class="box">
             <form name="search">
               <input type="text" class="barSearch" name="txt">
@@ -127,19 +170,28 @@
         </li>
 
         <!--- Menu Hamburguer Nascosto. Appare soltanto quando colapsano altre cose--->
+        <li class="nav-item collapse navbar-collapse menuButtons" id="areaAdmin">
+          <button class="nav-link linkMenuButtons" aria-expanded="false" name="Area Riservata">
+            <i class="fa-solid fa-lock"></i>
+          </button>
+        </li>
 
 
+        <li class="nav-item collapse navbar-collapse menuButtons" id="programmazioneButton">
+          <button class="nav-link linkMenuButtons" aria-expanded="false" name="Area Riservata">
+            Programmazione
+          </button>
+        </li>
 
 
 
         <!--- Tasto Area Riservata che collapsa quando lo schermo diventa piu piccolo di md--->
-        <li class="nav-item collapse navbar-collapse menuButtons" id="areaClient">
+        <li class="nav-item collapse navbar-collapse menuButtons" id="prenotaButton">
           <button class="nav-link linkMenuButtons" aria-expanded="false" name="Area Riservata">
-            Area Riservata
+            Prenota
           </button>
         </li>
         <!--- Tasto Area Riservata che collapsa quando lo schermo diventa piu piccolo di md--->
-
 
 
 
@@ -156,7 +208,7 @@
           <!--- Menu Dropdown Compreso dentro il tasto login--->
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDarkDropdownMenuLink" id="menudrop">
             <li><button class="dropdown-item"  name="loginDropdown" id="loginButtonDropdown">Login</button></li>
-            <li><button class="dropdown-item" name="registrati">Registrati</button></li>
+            <li><button class="dropdown-item" name="registrati" id="registrationButtonDropdown">Registrati</button></li>
           </ul>
         </li>
       </ul>
@@ -176,7 +228,7 @@
 
 
 <script src="../javascript/hamburguer.js"></script>
-<script src="../javascript/loginPopUpJS.js"></script>
+<script src="../javascript/headerPopUpJS.js"></script>
 
 </body>
 
