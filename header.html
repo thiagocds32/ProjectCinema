@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+
+  <!-- --------------------------------- ESSENTIAL IMPORTS ------------------------------------------>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+  <!-- --------------------------------- ESSENTIAL IMPORTS ------------------------------------------>
+
+
+
+  <!-- --------------------------------- CSS FOR NAVBAR ------------------------------------------>
+  <script src="https://kit.fontawesome.com/452d78dd7d.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="fontawesome-free-5.15.1/css/all.css">
+  <link rel="stylesheet" href="../css/headerStyle/headerStyle.css">
+  <link rel="stylesheet" href="../css/headerStyle/headerMenuHamburguerStyle.css">
+  <link rel="stylesheet" href="../css/headerStyle/headerSearchBarStyle.css">
+  <link rel="stylesheet" href="../css/headerStyle/headerPopUpLoginStyle.css">
+  <link rel="stylesheet" href="../css/headerStyle/headerPopUpRegistrationsStyle.css"> <!-- NUOVO LINK DA FARE -->
+  <!-- --------------------------------- CSS FOR NAVBAR ------------------------------------------>
+
+
+</head>
+<body>
+
+
+<header>
+  <div class="pop-up-container-login"> </div>
+  <div class="pop-up-container-registrazione"> </div>
+  <!-- --------------------POP UP REGISTRAZIONE----------------------- --->
+
+  <div class="pop-up-registration">
+    <div class="closeButtonPopUpRegistrazione"></div>
+      <form>
+        <div class="registrationForm">
+          <input type="text" name="nome" id="nome" placeholder="Nome">
+        </div>
+        <div class="registrationForm">
+          <input type="text" id="cognome" placeholder="Cognome">
+        </div>
+
+        <div class="registrationForm">
+          <input type="email" id="mail" aria-describedby="emailHelp" placeholder="Indirizzo e-mail">
+        </div>
+
+        <div class="registrationForm">
+          <input type="date" class="form-control" id="data">
+        </div>
+
+        <div class="registrationForm">
+          <input type="text" id="username" placeholder="Username">
+        </div>
+
+        <div class="registrationForm">
+          <input type="password" id="pass" placeholder="Password">
+        </div>
+
+        <div class="registrationForm">
+          <p>
+            <input type="checkbox" id="exampleCheck1" name="checkTrattamento">
+            <label for="exampleCheck1">
+              Autorizzo il trattamento dei miei dati personali presenti nel curriculum vitae ai sensi del Decreto Legislativo 30 giugno 2003, n. 196 e del GDPR (Regolamento UE 2016/679).
+
+            </label>
+          </p>
+
+        </div>
+
+        <div class="registrationForm">
+          <button name="" id="registrationButton">Registrati</button>
+        </div>
+      </form>
+  </div>
+  <!-- --------------------POP UP REGISTRAZIONE----------------------- --->
+
+
+  <!-- --------------------POP UP LOGIN------------------------ --->
+
+  <div class="pop-up-login">
+
+    <div class="closeButtonPopUpLogin"></div>
+    <div class="accediContainer">
+      <p id="accedi">Log In</p>
+    </div>
+
+    <div class="formLogin">
+      <form action="">
+
+        <input type="text" name="username" class="formLoginContent" id="formLogin" placeholder="Username">
+
+        <input type="text" name="password" class="formLoginContent" id="formPassword" placeholder="Password">
+      </form>
+    </div>
+    <div class="loginRequestButtonContainer">
+      <button name="loginRequest" id="loginRequestButton">Login</button>
+    </div>
+
+  </div>
+
+  <!-- --------------------POP UP LOGIN------------------------ --->
+
+
+
+  <!--- Div nascosto per menu mobile--->
+
+
+  <div class="collapse" id="navbarToggleExternalContent">
+    <div class="p-4" id="menumobileNascosto">
+      <button class="nav-link menumobileNascosto" id="registrazioneMenuNascosto"  aria-expanded="false">
+        Area Riservata
+      </button>
+
+      <button class="nav-link menumobileNascosto" id="loginMenuNascosto"  aria-expanded="false">
+        Login
+      </button>>
+
+
+    </div>
+  </div>
+
+  <!--- Div nascosto per menu mobile--->
+
+
+
+
+
+  <nav class="navbar navbar-expand-md navbar-1 " id="mainMenu">
+
+    <div class="container-fluid">
+
+
+      <!--- Logo brand del sito--->
+      <a class="navbar-brand logoCinema" href="#">Cinema</a>
+      <!--- Logo brand del sito--->
+
+
+
+
+      <!--- --------------------- SEARCH BAR ------------------------------- --->
+
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <div class="box">
+            <form name="search">
+              <input type="text" class="barSearch" name="txt">
+            </form>
+            <i class="fas fa-search" id="icon-magnifier"></i>
+          </div>
+        </li>
+        <!--- --------------------- SEARCH BAR ------------------------------- --->
+
+
+
+
+        <!--- Menu Hamburguer Nascosto. Appare soltanto quando collapsano altre cose--->
+        <li class="nav-item">
+          <div class="menu-btn toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent"
+               aria-controls="navbarToggleExternalContent"
+               aria-expanded="false"
+               aria-label="Toggle navigation">
+            <div class="menu-btn_burger"></div>
+          </div>
+        </li>
+
+        <!--- Menu Hamburguer Nascosto. Appare soltanto quando colapsano altre cose--->
+        <li class="nav-item collapse navbar-collapse menuButtons" id="areaAdmin">
+          <button class="nav-link linkMenuButtons" aria-expanded="false" name="Area Riservata">
+            <i class="fa-solid fa-lock"></i>
+          </button>
+        </li>
+
+
+        <li class="nav-item collapse navbar-collapse menuButtons" id="programmazioneButton">
+          <button class="nav-link linkMenuButtons" aria-expanded="false" name="Area Riservata">
+            Programmazione
+          </button>
+        </li>
+
+
+
+        <!--- Tasto Area Riservata che collapsa quando lo schermo diventa piu piccolo di md--->
+        <li class="nav-item collapse navbar-collapse menuButtons" id="prenotaButton">
+          <button class="nav-link linkMenuButtons" aria-expanded="false" name="Area Riservata">
+            Prenota
+          </button>
+        </li>
+        <!--- Tasto Area Riservata che collapsa quando lo schermo diventa piu piccolo di md--->
+
+
+
+        <!--- Tasto Login che collapsa quando lo schermo diventa piu piccolo di md--->
+        <li class="nav-item dropdown collapse navbar-collapse menuButtons">
+          <button class="nav-link linkMenuButtons" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Login
+          </button>
+          <!--- Tasto Login che collapsa quando lo schermo diventa piu piccolo di md--->
+
+
+
+
+          <!--- Menu Dropdown Compreso dentro il tasto login--->
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDarkDropdownMenuLink" id="menudrop">
+            <li><button class="dropdown-item"  name="loginDropdown" id="loginButtonDropdown">Login</button></li>
+            <li><button class="dropdown-item" name="registrati" id="registrationButtonDropdown">Registrati</button></li>
+          </ul>
+        </li>
+      </ul>
+
+    </div>
+
+
+  </nav>
+
+  </div>
+
+
+</header>
+
+
+
+
+
+<script src="../javascript/hamburguer.js"></script>
+<script src="../javascript/headerPopUpJS.js"></script>
+
+</body>
+
+
+</html>
